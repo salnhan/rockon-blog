@@ -1,3 +1,27 @@
+---
+title: Work with Gulp
+categories:
+- foo
+- bar
+teaser: Install, configure, and run gulp tasks
+---
+
+Howto install gulp
+
+# Table of Contents
+  * [Chapter 1](#Installation)
+  * [Chapter 2](#Using)
+  * [Chapter 3](#Fazit)
+
+### Installation
+
+``` bash
+$ npm install gulp --save-dev
+```
+
+In package.json
+
+``` json
 {
   "name": "hexo-site",
   "version": "0.0.0",
@@ -21,3 +45,8 @@
     "gulp": "^3.9.1"
   }
 }
+```
+
+### Using
+
+### Fazit
