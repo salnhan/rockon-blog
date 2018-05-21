@@ -1,9 +1,0 @@
-<hr>
-<p>layout: docs<br>title: Visibility<br>description: Control the visibility, without modifying the display, of elements with visibility utilities.</p>
-<h2 id="group-utilities"><a href="#group-utilities" class="headerlink" title="group: utilities"></a>group: utilities</h2><p>Set the <code>visibility</code> of elements with our visibility utilities. These do not modify the <code>display</code> value at all and are helpful for hiding content from most users, but still keeping them for screen readers.</p>
-<p>Apply <code>.visible</code> or <code>.invisible</code> as needed.</p>
-<p>{% highlight html %}</p>
-<p><div class="visible">…</div></p>
-<p><div class="invisible">…</div><br>{% endhighlight %}</p>
-<p>{% highlight scss %}<br>// Class<br>.visible {<br>  visibility: visible;<br>}<br>.invisible {<br>  visibility: hidden;<br>}</p>
-<p>// Usage as a mixin<br>.element {<br>  @include invisible(visible);<br>}<br>.element {<br>  @include invisible(hidden);<br>}<br>{% endhighlight %}</p>

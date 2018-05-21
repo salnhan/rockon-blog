@@ -67,9 +67,9 @@
       <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
     
     
-      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
-    
       <category term="gulp" scheme="https://salnhan.github.io/tags/gulp/"/>
+    
+      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
     
   </entry>
   
@@ -95,9 +95,9 @@
       <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
     
     
-      <category term="bower" scheme="https://salnhan.github.io/tags/bower/"/>
-    
       <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
+    
+      <category term="bower" scheme="https://salnhan.github.io/tags/bower/"/>
     
   </entry>
   
