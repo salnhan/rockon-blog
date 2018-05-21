@@ -7,7 +7,7 @@ title: Rockon Blogs
 subtitle: RoB
 description: Blog my experiences in web development
 keywords: salnhan nhan blog web development rockon-blog
-author: Minh Thien Nhan
+author: salnhan (MT Nhan)
 language: en
 timezone: Europe/Berlin
 
@@ -78,3 +78,7 @@ theme: rockon-blog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+theme_config:
+  fb_app_id:
+  email: mailto:mascit10@gmail.com

@@ -1,6 +1,11 @@
 ---
 title: First blog with Hexo Framework
-categories: hexo framework blog
+tags:
+ - hexo
+ - blog
+ - framework
+categories:
+ - blog
 teaser: Install, configure hexo. Create my first blogpost in markdown form and host it to github
 ---
 

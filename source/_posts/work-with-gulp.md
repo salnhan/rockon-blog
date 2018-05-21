@@ -1,8 +1,10 @@
 ---
-title: Work with Gulp (I)
+title: Work with Gulp
+tags:
+ - gulp
+ - frontend
 categories:
-- foo
-- bar
+ - frontend
 teaser: Install, configure, and run gulp tasks to compile your sass files or synschronize your browser.
 ---
 
