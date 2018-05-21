@@ -1,0 +1,10 @@
+<hr>
+<p>layout: docs<br>title: Clearfix<br>description: Quickly and easily clear floated content within a container by adding a clearfix utility.<br>group: utilities</p>
+<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><p>Easily clear <code>float</code>s by adding <code>.clearfix</code> <strong>to the parent element</strong>. Can also be used as a mixin.</p>
+<p>{% highlight html %}</p>
+<p><div class="clearfix">…</div><br>{% endhighlight %}</p>
+<p>{% highlight scss %}<br>// Mixin itself<br>@mixin clearfix() {<br>  &amp;::after {<br>    display: block;<br>    content: “”;<br>    clear: both;<br>  }<br>}</p>
+<p>// Usage as a mixin<br>.element {<br>  @include clearfix;<br>}<br>{% endhighlight %}</p>
+<p>The following example shows how the clearfix can be used. Without the clearfix the wrapping div would not span around the buttons which would cause a broken layout.</p>
+<p>{% capture example %}</p>
+<p><div class="bg-info clearfix"><br>  <button type="button" class="btn btn-secondary float-left">Example Button floated left</button><br>  <button type="button" class="btn btn-secondary float-right">Example Button floated right</button><br></div><br>{% endcapture %}<br>{% include example.html content=example %}</p>

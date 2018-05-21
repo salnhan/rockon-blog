@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Using bower | Rockon Blogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.Keeping track of all these packages and making sure they are up to date (or">
+<meta name="keywords" content="bower,frontend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using bower">
+<meta property="og:url" content="https://salnhan.github.io/2018/02/01/manage-frontend-frameworks-with-bower/index.html">
+<meta property="og:site_name" content="Rockon Blogs">
+<meta property="og:description" content="Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.Keeping track of all these packages and making sure they are up to date (or">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://bower.io/img/bower-logo.svg">
+<meta property="og:updated_time" content="2018-05-21T18:37:24.314Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Using bower">
+<meta name="twitter:description" content="Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.Keeping track of all these packages and making sure they are up to date (or">
+<meta name="twitter:image" content="https://bower.io/img/bower-logo.svg">
+  
+    <link rel="alternate" href="/rockon-blog/atom.xml" title="Rockon Blogs" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/rockon-blog/components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="/rockon-blog/components/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/rockon-blog/css/styles.css">
+  <link rel="stylesheet" href="/rockon-blog/css/breakpoints.css">
+  <link rel="stylesheet" href="/rockon-blog/css/highlight.css">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+
+  <!-- use specific layout for about page -->
+  
+  <body class="bg-dark">
+    <!-- navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand d-lg-none" href="#">Rockon Blogs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       
+          <li class="nav-item ">
+            <a class="nav-link"
+            href="/rockon-blog/">Home</a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link"
+            href="/rockon-blog/archives/">Archives</a>
+          </li>
+        
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+        <div class="dropdown-menu">
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/blog/">blog</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/frontend/">frontend</a>
+          
+        </div>
+      </li>
+    </ul>
+    <a class='navbar-brand d-none d-lg-flex' href='index.html'>Rockon Blogs</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/salnhan/rock-on-blog" title="Github''> <i class="fab fa-github"></i></a>
+      </li>
+      <li class="nav-item">
+       <li class="nav-item">
+          <a class="nav-link" href="mailto:mascit10@gmail.com" title="Contact"> <i class="far fa-envelope"></i></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" title="facebook"> <i class="fab fa-facebook-f"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rockon-blog/atom.xml" title="rss_feed">
+        <span><i class="fas fa-rss"></i></span></a>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+    <!-- end navigation -->
+
+    <!-- main -->
+    <div class="container main-wrapper mx-auto">
+      <hr class="hr-nav">
+      <div class="row">
+        <div class="col-lg-9 col-md-12 mx-auto">
+          <section id="main">
+<div class="col">
+
+  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
+    <div class="card-header article-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="article-title" itemprop="name">Using bower</div>
+        <a href="/rockon-blog/2018/02/01/manage-frontend-frameworks-with-bower/" class="btn btn-info article-date">
+  <time datetime="2018-01-31T23:00:00.000Z" itemprop="datePublished">01.02.2018</time>
+</a>
+      </div>
+    </div>
+    <div class="article-preview--body" itemprop="articleBody">
+      
+          <p><img src="https://bower.io/img/bower-logo.svg" alt="bower logo" title="Logo Bower"></p>
+<p>Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.<br>Keeping track of all these packages and making sure they are up to date (or set to the specific versions you need) is tricky. Bower to the rescue!<br>Bower can manage components that contain HTML, CSS, JavaScript, fonts or even image files. Bower doesn’t concatenate or minify code or do anything else - it just installs the right versions of the packages you need and their dependencies.</p>
+<h3 id="Install-bower"><a href="#Install-bower" class="headerlink" title="Install bower"></a>Install bower</h3><p><strong>Prerequisite</strong><br> node muss be installed</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bower muss be installed globally</span></span><br><span class="line">$ npm install -g bower</span><br></pre></td></tr></table></figure>
+<h3 id="Create-file-bower-json"><a href="#Create-file-bower-json" class="headerlink" title="Create file bower.json"></a>Create file bower.json</h3><p>in your project’s folder run following command complete the requisitions (you can press enter):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower init</span><br></pre></td></tr></table></figure>
+<p>File bower.json will be created in your project’s folder like:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-theme-rockon-blog"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"authors"</span>: [</span><br><span class="line">    <span class="string">"salnhan &lt;mascit10@gmail.com&gt;"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="attr">"homepage"</span>: <span class="string">"https://github.com/salnhan/hexo-theme-rockon-blog"</span>,</span><br><span class="line">  <span class="attr">"ignore"</span>: [</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="configure-your-current-working-directory-in-bowerrc"><a href="#configure-your-current-working-directory-in-bowerrc" class="headerlink" title="configure your current working directory in .bowerrc"></a>configure your current working directory in .bowerrc</h3><p>you can define in <code>.bowerrc</code>, in which directory the installed packages will be stored</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"directory"</span> : <span class="string">"source/components"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>More configuration in .bowerrc can be found <a href="https://bower.io/docs/config/" target="_blank" rel="noopener">hier</a></p>
+<h3 id="Install-new-package-and-save-it-to-bower-json"><a href="#Install-new-package-and-save-it-to-bower-json" class="headerlink" title="Install new package and save it to bower.json"></a>Install new package and save it to bower.json</h3><p><strong>If you want to install the newest version of package</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install bootstrap with current version (4.1.1)</span></span><br><span class="line">$ bower install bootstrap --save</span><br></pre></td></tr></table></figure>
+<p>Now have a look to file bower.json:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-theme-rockon-blog"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"authors"</span>: [</span><br><span class="line">    <span class="string">"salnhan &lt;mascit10@gmail.com&gt;"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="attr">"homepage"</span>: <span class="string">"https://github.com/salnhan/hexo-theme-rockon-blog"</span>,</span><br><span class="line">  <span class="attr">"ignore"</span>: [</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"bootstrap"</span>: <span class="string">"^4.1.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>If you want to install the specify version of package</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install bootstrap with version 3.0.0</span></span><br><span class="line">$ bower install bootstrap<span class="comment">#3.0.0 --save</span></span><br></pre></td></tr></table></figure>
+<p><strong>useful frontend packages can be install via bower</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install jquery with current version</span></span><br><span class="line">$ bower install jquery --save</span><br><span class="line"><span class="comment"># install bootstrap with current version</span></span><br><span class="line">$ bower install bootstrap --save</span><br><span class="line"><span class="comment"># install fontawesome with current version</span></span><br><span class="line">$ bower install fontawesome --save</span><br><span class="line"><span class="comment"># install parallax.js with current version</span></span><br><span class="line">$ bower install parallax.js --save</span><br></pre></td></tr></table></figure>
+<h3 id="Install-all-packages-in-bower-json"><a href="#Install-all-packages-in-bower-json" class="headerlink" title="Install all packages in bower.json"></a>Install all packages in bower.json</h3><p>To install all packages in bower.json, just run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower install</span><br></pre></td></tr></table></figure>
+<h3 id="Uninstall-package-and-remove-it-from-bower-json"><a href="#Uninstall-package-and-remove-it-from-bower-json" class="headerlink" title="Uninstall package and remove it from bower.json"></a>Uninstall package and remove it from bower.json</h3><p>To uninstall a package and remove it from the bower.json, just run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower uninstall bootstrap --save</span><br></pre></td></tr></table></figure>
+<h3 id="Clear-bower-cache"><a href="#Clear-bower-cache" class="headerlink" title="Clear bower cache"></a>Clear bower cache</h3><p>Bower uses cache to save installed packages. This means, bower will download packages at the first time. At the next install will bower use the package in cache instead of connection to source</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># first install of jquery (version 3.3.1)</span></span><br><span class="line">$ bower install jquery<span class="comment">#3.3.1 --save</span></span><br><span class="line">bower jquery<span class="comment">#3.3.1            cached https://github.com/jquery/jquery-dist.git#3.3.1</span></span><br><span class="line">bower jquery<span class="comment">#3.3.1            validate 3.3.1 against https://github.com/jquery/jquery-dist.git#3.3.1</span></span><br><span class="line">bower jquery<span class="comment">#3.3.1            install jquery#3.3.1</span></span><br></pre></td></tr></table></figure>
+<p>If you want to clear bower cache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower cache clear</span><br></pre></td></tr></table></figure>
+<p><strong><em>Links:</em></strong></p>
+<ul>
+<li><a href="https://bower.io/" target="_blank" rel="noopener">Bower Homepage</a></li>
+<li><a href="https://bower.io/" target="_blank" rel="noopener">Bower Configuration</a></li>
+</ul>
+
+      
+    </div>
+    <hr>
+
+      <div class="article-preview--footer">
+        <i class="fas fa-tags"></i>
+
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/bower/">bower</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/frontend/">frontend</a></li></ul>
+
+        
+  <div class="article-category">
+  	<i class="fas fa-folder-open"></i>
+    <a class="article-category-link" href="/rockon-blog/categories/frontend/">frontend</a>
+  </div>
+
+      </div>
+
+  </div>
+</div>
+</section>
+        </div>
+        <div class="col-lg-3 mx-auto main-sidebar">
+           
+            <aside id="sidebar">
+  
+    
+<div class="card main-sidebar--widget">
+  <div class="card-header main-sidebar--widget-header">Recent Posts</div>
+  <ul class="list-group list-group-flush">
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2018/05/21/intro/">First blog with Hexo Framework</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2018/05/21/work-with-gulp/">Work with Gulp</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2018/02/01/manage-frontend-frameworks-with-bower/">Using bower</a>
+      </li>
+    
+  </ul>
+
+</div>
+
+  
+    
+	
+	<div class="card main-sidebar--widget">
+	  <div class="card-header main-sidebar--widget-header">Archives</div>
+	  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/02/">February 2018</a></li></ul>
+	</div>
+	
+
+
+
+  
+</aside>
+          
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer class="container footer">
+  <hr class="hr-nav">
+  
+  <div class="d-flex justify-content-between align-items-center">
+  	<div class="footer-copyright">
+      &copy; 2018 salnhan (MT Nhan)
+	</div>
+	<div class="footer-themes">
+      Themes <a href="https://github.com/salnhan/hexo-theme-rockon-blog" target="_blank">rockon-blogs</a>
+	</div>
+	<div class="footer-hexo">
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  	</div>
+  </div>
+</footer>
+
+      <! -- insert javascripts -->
+      
+<script></script>
+
+<script src="/rockon-blog/components/jquery/dist/jquery.min.js"></script>
+<script src="/rockon-blog/components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="/rockon-blog/fancybox/jquery.fancybox.css">
+  <script src="/rockon-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+
+
+    </div>
+    <!-- end main -->
+  </body>
+</html>

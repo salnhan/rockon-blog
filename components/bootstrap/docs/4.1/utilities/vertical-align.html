@@ -1,0 +1,9 @@
+<hr>
+<p>layout: docs<br>title: Vertical alignment<br>description: Easily change the vertical alignment of inline, inline-block, inline-table, and table cell elements.</p>
+<h2 id="group-utilities"><a href="#group-utilities" class="headerlink" title="group: utilities"></a>group: utilities</h2><p>Change the alignment of elements with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align"><code>vertical-alignment</code></a> utilities. Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.</p>
+<p>Choose from <code>.align-baseline</code>, <code>.align-top</code>, <code>.align-middle</code>, <code>.align-bottom</code>, <code>.align-text-bottom</code>, and <code>.align-text-top</code> as needed.</p>
+<p>With inline elements:</p>
+<p>{% capture example %}<br><span class="align-baseline">baseline</span><br><span class="align-top">top</span><br><span class="align-middle">middle</span><br><span class="align-bottom">bottom</span><br><span class="align-text-top">text-top</span><br><span class="align-text-bottom">text-bottom</span><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<p>With table cells:</p>
+<p>{% capture example %}</p>
+<p><table style="height: 100px;"><br>  <tbody><br>    <tr><br>      <td class="align-baseline">baseline</td><br>      <td class="align-top">top</td><br>      <td class="align-middle">middle</td><br>      <td class="align-bottom">bottom</td><br>      <td class="align-text-top">text-top</td><br>      <td class="align-text-bottom">text-bottom</td><br>    </tr><br>  </tbody><br></table><br>{% endcapture %}<br>{% include example.html content=example %}</p>

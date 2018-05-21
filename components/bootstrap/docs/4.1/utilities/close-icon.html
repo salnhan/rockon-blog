@@ -1,0 +1,5 @@
+<hr>
+<p>layout: docs<br>title: Close icon<br>description: Use a generic close icon for dismissing content like modals and alerts.<br>group: utilities</p>
+<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><p><strong>Be sure to include text for screen readers</strong>, as we’ve done with <code>aria-label</code>.</p>
+<p>{% capture example %}</p>
+<p><button type="button" class="close" aria-label="Close"><br>  <span aria-hidden="true">&times;</span><br></button><br>{% endcapture %}<br>{% include example.html content=example %}</p>

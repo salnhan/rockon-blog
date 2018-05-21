@@ -1,0 +1,93 @@
+<hr>
+<p>layout: docs<br>title: Typography<br>description: Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.<br>group: content</p>
+<h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc: true"></a>toc: true</h2><h2 id="Global-settings"><a href="#Global-settings" class="headerlink" title="Global settings"></a>Global settings</h2><p>Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/">textual utility classes</a>.</p>
+<ul>
+<li>Use a <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/content/reboot/#native-font-stack">native font stack</a> that selects the best <code>font-family</code> for each OS and device.</li>
+<li>For a more inclusive and accessible type scale, we assume the browser default root <code>font-size</code> (typically 16px) so visitors can customize their browser defaults as needed.</li>
+<li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base applied to the <code>&lt;body&gt;</code>.</li>
+<li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code>.</li>
+<li>Use <code>$body-bg</code> to set a <code>background-color</code> on the <code>&lt;body&gt;</code> (<code>#fff</code> by default).</li>
+</ul>
+<p>These styles can be found within <code>_reboot.scss</code>, and the global variables are defined in <code>_variables.scss</code>. Make sure to set <code>$font-size-base</code> in <code>rem</code>.</p>
+<h2 id="Headings"><a href="#Headings" class="headerlink" title="Headings"></a>Headings</h2><p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</p>
+<table><br>  <thead><br>    <tr><br>      <th>Heading</th><br>      <th>Example</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <td><br>        {{ “<code>&lt;h1&gt;&lt;/h1&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h1">h1. Bootstrap heading</span></td><br>    </tr><br>    <tr><br>      <td><br>        {{ “<code>&lt;h2&gt;&lt;/h2&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h2">h2. Bootstrap heading</span></td><br>    </tr><br>    <tr><br>      <td><br>        {{ “<code>&lt;h3&gt;&lt;/h3&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h3">h3. Bootstrap heading</span></td><br>    </tr><br>    <tr><br>      <td><br>        {{ “<code>&lt;h4&gt;&lt;/h4&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h4">h4. Bootstrap heading</span></td><br>    </tr><br>    <tr><br>      <td><br>        {{ “<code>&lt;h5&gt;&lt;/h5&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h5">h5. Bootstrap heading</span></td><br>    </tr><br>    <tr><br>      <td><br>        {{ “<code>&lt;h6&gt;&lt;/h6&gt;</code>“ | markdownify }}<br>      </td><br>      <td><span class="h6">h6. Bootstrap heading</span></td><br>    </tr><br>  </tbody><br></table>
+
+<p>{% highlight html %}</p>
+<p><h1>h1. Bootstrap heading</h1></p>
+<p><h2>h2. Bootstrap heading</h2></p>
+<p><h3>h3. Bootstrap heading</h3></p>
+<p><h4>h4. Bootstrap heading</h4></p>
+<p><h5>h5. Bootstrap heading</h5></p>
+<p><h6>h6. Bootstrap heading</h6><br>{% endhighlight %}</p>
+<p><code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.</p>
+<p>{% capture example %}</p>
+<p><p class="h1">h1. Bootstrap heading</p></p>
+<p><p class="h2">h2. Bootstrap heading</p></p>
+<p><p class="h3">h3. Bootstrap heading</p></p>
+<p><p class="h4">h4. Bootstrap heading</p></p>
+<p><p class="h5">h5. Bootstrap heading</p></p>
+<p><p class="h6">h6. Bootstrap heading</p><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h3 id="Customizing-headings"><a href="#Customizing-headings" class="headerlink" title="Customizing headings"></a>Customizing headings</h3><p>Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.</p>
+<div class="bd-example"><br>  <span class="h3"><br>    Fancy display heading<br>    <small class="text-muted">With faded secondary text</small><br>  </span><br></div>
+
+<p>{% highlight html %}</p>
+<p><h3><br>  Fancy display heading<br>  <small class="text-muted">With faded secondary text</small><br></h3><br>{% endhighlight %}</p>
+<h2 id="Display-headings"><a href="#Display-headings" class="headerlink" title="Display headings"></a>Display headings</h2><p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a <strong>display heading</strong>—a larger, slightly more opinionated heading style.</p>
+<div class="bd-example bd-example-type"><br>  <table class="table"><br>    <tbody><br>      <tr><br>        <td><span class="display-1">Display 1</span></td><br>      </tr><br>      <tr><br>      <td><span class="display-2">Display 2</span></td><br>      </tr><br>      <tr><br>      <td><span class="display-3">Display 3</span></td><br>      </tr><br>      <tr><br>      <td><span class="display-4">Display 4</span></td><br>      </tr><br>    </tbody><br>  </table><br></div>
+
+<p>{% highlight html %}</p>
+<p><h1 class="display-1">Display 1</h1></p>
+<p><h1 class="display-2">Display 2</h1></p>
+<p><h1 class="display-3">Display 3</h1></p>
+<p><h1 class="display-4">Display 4</h1><br>{% endhighlight %}</p>
+<h2 id="Lead"><a href="#Lead" class="headerlink" title="Lead"></a>Lead</h2><p>Make a paragraph stand out by adding <code>.lead</code>.</p>
+<p>{% capture example %}</p>
+<p><p class="lead"><br>  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.<br></p><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h2 id="Inline-text-elements"><a href="#Inline-text-elements" class="headerlink" title="Inline text elements"></a>Inline text elements</h2><p>Styling for common inline HTML5 elements.</p>
+<p>{% capture example %}</p>
+<p><p>You can use the mark tag to <mark>highlight</mark> text.</p></p>
+<p><p><del>This line of text is meant to be treated as deleted text.</del></p></p>
+<p><p><s>This line of text is meant to be treated as no longer accurate.</s></p></p>
+<p><p><ins>This line of text is meant to be treated as an addition to the document.</ins></p></p>
+<p><p><u>This line of text will render as underlined</u></p></p>
+<p><p><small>This line of text is meant to be treated as fine print.</small></p></p>
+<p><p><strong>This line rendered as bold text.</strong></p></p>
+<p><p><em>This line rendered as italicized text.</em></p><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<p><code>.mark</code> and <code>.small</code> classes are also available to apply the same styles as <code>&lt;mark&gt;</code> and <code>&lt;small&gt;</code> while avoiding any unwanted semantic implications that the tags would bring.</p>
+<p>While not shown above, feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
+<h2 id="Text-utilities"><a href="#Text-utilities" class="headerlink" title="Text utilities"></a>Text utilities</h2><p>Change text alignment, transform, style, weight, and color with our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/">text utilities</a> and <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/">color utilities</a>.</p>
+<h2 id="Abbreviations"><a href="#Abbreviations" class="headerlink" title="Abbreviations"></a>Abbreviations</h2><p>Stylized implementation of HTML’s <code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.</p>
+<p>Add <code>.initialism</code> to an abbreviation for a slightly smaller font-size.</p>
+<p>{% capture example %}</p>
+<p><p><abbr title="attribute">attr</abbr></p></p>
+<p><p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h2 id="Blockquotes"><a href="#Blockquotes" class="headerlink" title="Blockquotes"></a>Blockquotes</h2><p>For quoting blocks of content from another source within your document. Wrap <code>&lt;blockquote class=&quot;blockquote&quot;&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.</p>
+<p>{% capture example %}</p>
+<p><blockquote class="blockquote"><br>  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><br></blockquote><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h3 id="Naming-a-source"><a href="#Naming-a-source" class="headerlink" title="Naming a source"></a>Naming a source</h3><p>Add a <code>&lt;footer class=&quot;blockquote-footer&quot;&gt;</code> for identifying the source. Wrap the name of the source work in <code>&lt;cite&gt;</code>.</p>
+<p>{% capture example %}</p>
+<p><blockquote class="blockquote"><br>  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><br>  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer><br></blockquote><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h3 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h3><p>Use text utilities as needed to change the alignment of your blockquote.</p>
+<p>{% capture example %}</p>
+<p><blockquote class="blockquote text-center"><br>  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><br>  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer><br></blockquote><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<p>{% capture example %}</p>
+<p><blockquote class="blockquote text-right"><br>  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><br>  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer><br></blockquote><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><h3 id="Unstyled"><a href="#Unstyled" class="headerlink" title="Unstyled"></a>Unstyled</h3><p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
+<p>{% capture example %}</p>
+<p><ul class="list-unstyled"><br>  <li>Lorem ipsum dolor sit amet</li><br>  <li>Consectetur adipiscing elit</li><br>  <li>Integer molestie lorem at massa</li><br>  <li>Facilisis in pretium nisl aliquet</li><br>  <li>Nulla volutpat aliquam velit<br>    <ul><br>      <li>Phasellus iaculis neque</li><br>      <li>Purus sodales ultricies</li><br>      <li>Vestibulum laoreet porttitor sem</li><br>      <li>Ac tristique libero volutpat at</li><br>    </ul><br>  </li><br>  <li>Faucibus porta lacus fringilla vel</li><br>  <li>Aenean sit amet erat nunc</li><br>  <li>Eget porttitor lorem</li><br></ul><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h3 id="Inline"><a href="#Inline" class="headerlink" title="Inline"></a>Inline</h3><p>Remove a list’s bullets and apply some light <code>margin</code> with a combination of two classes, <code>.list-inline</code> and <code>.list-inline-item</code>.</p>
+<p>{% capture example %}</p>
+<p><ul class="list-inline"><br>  <li class="list-inline-item">Lorem ipsum</li><br>  <li class="list-inline-item">Phasellus iaculis</li><br>  <li class="list-inline-item">Nulla volutpat</li><br></ul><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h3 id="Description-list-alignment"><a href="#Description-list-alignment" class="headerlink" title="Description list alignment"></a>Description list alignment</h3><p>Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a <code>.text-truncate</code> class to truncate the text with an ellipsis.</p>
+<p>{% capture example %}</p>
+<p><dl class="row"><br>  <dt class="col-sm-3">Description lists</dt><br>  <dd class="col-sm-9">A description list is perfect for defining terms.</dd></p>
+<p>  <dt class="col-sm-3">Euismod</dt><br>  <dd class="col-sm-9"><br>    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p><br>    <p>Donec id elit non mi porta gravida at eget metus.</p><br>  </dd></p>
+<p>  <dt class="col-sm-3">Malesuada porta</dt><br>  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd></p>
+<p>  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt><br>  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd></p>
+<p>  <dt class="col-sm-3">Nesting</dt><br>  <dd class="col-sm-9"><br>    <dl class="row"><br>      <dt class="col-sm-4">Nested definition list</dt><br>      <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd><br>    </dl><br>  </dd><br></dl><br>{% endcapture %}<br>{% include example.html content=example %}</p>
+<h2 id="Responsive-typography"><a href="#Responsive-typography" class="headerlink" title="Responsive typography"></a>Responsive typography</h2><p><em>Responsive typography</em> refers to scaling text and components by simply adjusting the root element’s <code>font-size</code> within a series of media queries. Bootstrap doesn’t do this for you, but it’s fairly easy to add if you need it.</p>
+<p>Here’s an example of it in practice. Choose whatever <code>font-size</code>s and media queries you wish.</p>
+<p>{% highlight scss %}<br>html {<br>  font-size: 1rem;<br>}</p>
+<p>@include media-breakpoint-up(sm) {<br>  html {<br>    font-size: 1.2rem;<br>  }<br>}</p>
+<p>@include media-breakpoint-up(md) {<br>  html {<br>    font-size: 1.4rem;<br>  }<br>}</p>
+<p>@include media-breakpoint-up(lg) {<br>  html {<br>    font-size: 1.6rem;<br>  }<br>}<br>{% endhighlight %}</p>

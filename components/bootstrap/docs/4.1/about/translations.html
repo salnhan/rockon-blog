@@ -1,0 +1,7 @@
+<hr>
+<p>layout: docs<br>title: Translations<br>description: Links to community-translated Bootstrap documentation sites.</p>
+<h2 id="group-about"><a href="#group-about" class="headerlink" title="group: about"></a>group: about</h2><p>Community members have translated Bootstrap’s documentation into various languages. None are officially supported and they may not always be up to date.</p>
+<ul><br>{% for language in site.data.translations %}<br>  <li><a href="{{ language.url }}" hreflang="{{ language.code }}">{{ language.description }} ({{ language.name }})</a></li><br>{% endfor %}<br></ul>
+
+<p><strong>We don’t help organize or host translations, we just link to them.</strong></p>
+<p>Finished a new or better translation? Open a pull request to add it to our list.</p>

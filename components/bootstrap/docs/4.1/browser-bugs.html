@@ -1,0 +1,16 @@
+<hr>
+<p>layout: docs<br>title: Wall of browser bugs</p>
+<h2 id="group-browser-bugs"><a href="#group-browser-bugs" class="headerlink" title="group: browser-bugs"></a>group: browser-bugs</h2><p>Bootstrap currently works around several outstanding browser bugs in major browsers to deliver the best cross-browser experience possible. Some bugs, like those listed below, cannot be solved by us.</p>
+<p>We publicly list browser bugs that are impacting us here, in the hopes of expediting the process of fixing them. For information on Bootstrap’s browser compatibility, <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/browsers-devices/#supported-browsers">see our browser compatibility docs</a>.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=536263">Chromium issue 536263: [meta] Issues affecting Bootstrap</a></li>
+<li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230801">Mozilla bug 1230801: Fix the issues that affect Bootstrap</a></li>
+<li><a href="https://bugs.webkit.org/show_bug.cgi?id=159753">WebKit bug 159753: [meta] Issues affecting Bootstrap</a></li>
+<li><a href="https://docs.google.com/document/d/1LPaPA30bLUB_publLIMF0RlhdnPx_ePXm7oW02iiT6o">jQuery’s browser bug workarounds</a></li>
+</ul>
+<table class="bd-browser-bugs table table-bordered table-hover"><br>  <thead><br>    <tr><br>      <th>Browser(s)</th><br>      <th>Summary of bug</th><br>      <th>Upstream bug(s)</th><br>      <th>Bootstrap issue(s)</th><br>    </tr><br>  </thead><br>  <tbody><br>    {% for bug in site.data.browser-bugs %}<br>    <tr><br>      <td>{{ bug.browser }}</td><br>      <td>{{ bug.summary | markdownify }}</td><br>      <td>{% include bugify.html content=bug.upstream_bug %}</td><br>      <td>{% include bugify.html content=bug.origin %}</td><br>    </tr><br>    {% endfor %}<br>  </tbody><br></table>
+
+<h1 id="Most-wanted-features"><a href="#Most-wanted-features" class="headerlink" title="Most wanted features"></a>Most wanted features</h1><p>There are several features specified in Web standards which would allow us to make Bootstrap more robust, elegant, or performant, but aren’t yet implemented in certain browsers, thus preventing us from taking advantage of them.</p>
+<p>We publicly list these “most wanted” feature requests here, in the hopes of expediting the process of getting them implemented.</p>
+<table class="bd-browser-bugs table table-bordered table-hover"><br>  <thead><br>    <tr><br>      <th>Browser(s)</th><br>      <th>Summary of feature</th><br>      <th>Upstream issue(s)</th><br>      <th>Bootstrap issue(s)</th><br>    </tr><br>  </thead><br>  <tbody><br>    {% for feat in site.data.browser-features %}<br>    <tr><br>      <td>{{ feat.browser }}</td><br>      <td>{{ feat.summary | markdownify }}</td><br>      <td>{% include bugify.html content=feat.upstream_bug %}</td><br>      <td>{% include bugify.html content=feat.origin %}</td><br>    </tr><br>    {% endfor %}<br>  </tbody><br></table>
