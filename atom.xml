@@ -6,7 +6,7 @@
   <link href="/rockon-blog/atom.xml" rel="self"/>
   
   <link href="https://salnhan.github.io/"/>
-  <updated>2018-05-21T18:37:24.314Z</updated>
+  <updated>2018-05-21T18:37:24.330Z</updated>
   <id>https://salnhan.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Work with Gulp</title>
+    <link href="https://salnhan.github.io/2018/05/21/work-with-gulp/"/>
+    <id>https://salnhan.github.io/2018/05/21/work-with-gulp/</id>
+    <published>2018-05-21T18:37:05.138Z</published>
+    <updated>2018-05-21T18:37:24.330Z</updated>
+    
+    <content type="html"><![CDATA[<p>Howto install gulp</p><h1 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h1><ul><li><a href="#Installation">Chapter 1</a></li><li><a href="#Using">Chapter 2</a></li><li><a href="#Fazit">Chapter 3</a></li></ul><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp --save-dev</span><br></pre></td></tr></table></figure><p>In package.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"hexo"</span>: &#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-deployer-git"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"^0.1.4"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"^0.2.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"gulp"</span>: <span class="string">"^3.9.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h3><h3 id="Fazit"><a href="#Fazit" class="headerlink" title="Fazit"></a>Fazit</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Howto install gulp&lt;/p&gt;
+&lt;h1 id=&quot;Table-of-Contents&quot;&gt;&lt;a href=&quot;#Table-of-Contents&quot; class=&quot;headerlink&quot; title=&quot;Table of Contents&quot;&gt;&lt;/a&gt;Table of 
+      
+    
+    </summary>
+    
+      <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
+    
+    
+      <category term="gulp" scheme="https://salnhan.github.io/tags/gulp/"/>
+    
+      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
+    
+  </entry>
   
   <entry>
     <title>First blog with Hexo Framework</title>
@@ -42,34 +70,6 @@
       <category term="blog" scheme="https://salnhan.github.io/tags/blog/"/>
     
       <category term="framework" scheme="https://salnhan.github.io/tags/framework/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Work with Gulp</title>
-    <link href="https://salnhan.github.io/2018/05/21/work-with-gulp/"/>
-    <id>https://salnhan.github.io/2018/05/21/work-with-gulp/</id>
-    <published>2018-05-21T18:37:05.138Z</published>
-    <updated>2018-05-21T18:37:24.330Z</updated>
-    
-    <content type="html"><![CDATA[<p>Howto install gulp</p><h1 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h1><ul><li><a href="#Installation">Chapter 1</a></li><li><a href="#Using">Chapter 2</a></li><li><a href="#Fazit">Chapter 3</a></li></ul><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp --save-dev</span><br></pre></td></tr></table></figure><p>In package.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"hexo"</span>: &#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-deployer-git"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"^0.1.4"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"^0.2.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"gulp"</span>: <span class="string">"^3.9.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h3><h3 id="Fazit"><a href="#Fazit" class="headerlink" title="Fazit"></a>Fazit</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Howto install gulp&lt;/p&gt;
-&lt;h1 id=&quot;Table-of-Contents&quot;&gt;&lt;a href=&quot;#Table-of-Contents&quot; class=&quot;headerlink&quot; title=&quot;Table of Contents&quot;&gt;&lt;/a&gt;Table of 
-      
-    
-    </summary>
-    
-      <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
-    
-    
-      <category term="gulp" scheme="https://salnhan.github.io/tags/gulp/"/>
-    
-      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
     
   </entry>
   
