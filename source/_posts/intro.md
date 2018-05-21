@@ -1,17 +1,17 @@
 ---
-title: Experiences with Hexo Framework
+title: First blog with Hexo Framework
 categories: hexo framework blog
-teaser: Create and host your blog with Hexo, which is a blogging framework
+teaser: Install, configure hexo. Create my first blogpost in markdown form and host it to github
 ---
 
  In diesem Blogartikel wollte ich erzählen (oder notieren), wie ich meinen ersten Blog mit [Hexo](https://hexo.io) erstellt habe.
 Anschließend erfasse ich auch, wie ein Blogartikel auf [GitHub](https://github.com) gehostet wird.
 
-## Blogartikel anlegen 
+## Create my first blog article
 
-### GitHub Account anlegen (falls nicht vorhanden)
+### GitHub Account
 
-### Installation Hexo
+### Install Hexo
 
 **Requirements**:
 &nbsp;&nbsp; [Node.js](https://nodejs.org/en/) muss installiert werden (aktuelle Version).
@@ -24,11 +24,9 @@ Die Installation des Hexo-Frameworks ist relative einfach. Dafür muss das Paket
 $ npm install -g hexo-cli
 ```
 
-### Blog-Ordner anlegen
+### Add blog folder
 
 #### <i class="fa fa-gear fa-spin fa-2x" style="color: firebrick"></i> Configuration
-
-Anmerkung: Speicherort des Blog-Ordners beachten
 
 ``` bash
 # i want to save my blog folder in `workspace/Code/node-projects`
@@ -36,9 +34,6 @@ $ cd workspace/Code/node-projects
 # install blog folder `rock-on-blogs`
 $ hexo init rock-on-blogs
 ```
-
-
-Ein Ordner muss angelegt, um die Blogposts zu verwalten
 
 ### Create a new post
 

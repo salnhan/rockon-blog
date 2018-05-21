@@ -3,6 +3,7 @@ title: Using bower
 tags: [bower, frontend]
 categories: [frontend, bower]
 teaser: Install and manage frontend packages by using bower. Web sites are made of lots of things frameworks, libraries, assets, and utilities. Bower manages all these things for you.
+date: 2018.02.01
 ---
 
 ![bower logo](https://bower.io/img/bower-logo.svg "Logo Bower")

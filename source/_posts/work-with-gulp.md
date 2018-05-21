@@ -1,9 +1,9 @@
 ---
-title: Work with Gulp
+title: Work with Gulp (I)
 categories:
 - foo
 - bar
-teaser: Install, configure, and run gulp tasks
+teaser: Install, configure, and run gulp tasks to compile your sass files or synschronize your browser.
 ---
 
 Howto install gulp
