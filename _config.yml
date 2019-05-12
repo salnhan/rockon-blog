@@ -77,7 +77,8 @@ theme: rockon-blog
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/salnhan/rockon-blog.git
 
 theme_config:
   fb_app_id:
