@@ -9,12 +9,12 @@ teaser: Install and manage frontend packages by using bower. Web sites are made 
 date: 2018.02.01
 ---
 
-![bower logo](https://bower.io/img/bower-logo.svg "Logo Bower")
-
 Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.
 Keeping track of all these packages and making sure they are up to date (or set to the specific versions you need) is tricky. Bower to the rescue!
 Bower can manage components that contain HTML, CSS, JavaScript, fonts or even image files. Bower doesn’t concatenate or minify code or do anything else - it just installs the right versions of the packages you need and their dependencies.
 
+
+{% fancybox https://bower.io/img/bower-logo.svg Sunrise %}
 
 ### Install bower
 
