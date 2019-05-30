@@ -119,7 +119,9 @@ More info: [Server](https://hexo.io/docs/server.html)
 ``` bash
 $ hexo new "My New Post"
 ```
-In `source/_post`
+In `source/_post` folder sill you see the file `my-new-post.md`.
+
+You can now write your blog in the `my-new-post.md`.
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
