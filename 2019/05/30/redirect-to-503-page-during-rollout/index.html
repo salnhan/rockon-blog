@@ -6,19 +6,22 @@
   
 
   
-  <title>Rockon Blogs</title>
+  <title>redirect-to-maintenance-page-with-nginx | Rockon Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Blog my experiences in web development">
-<meta name="keywords" content="salnhan nhan blog web development rockon-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rockon Blogs">
-<meta property="og:url" content="https://salnhan.github.io/index.html">
+  <meta name="description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
+<meta name="keywords" content="nginx,503,redirect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redirect-to-maintenance-page-with-nginx">
+<meta property="og:url" content="https://salnhan.github.io/2019/05/30/redirect-to-503-page-during-rollout/index.html">
 <meta property="og:site_name" content="Rockon Blogs">
-<meta property="og:description" content="Blog my experiences in web development">
+<meta property="og:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://nginx.org/nginx.png">
+<meta property="og:updated_time" content="2019-05-30T21:08:12.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rockon Blogs">
-<meta name="twitter:description" content="Blog my experiences in web development">
+<meta name="twitter:title" content="redirect-to-maintenance-page-with-nginx">
+<meta name="twitter:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
+<meta name="twitter:image" content="http://nginx.org/nginx.png">
   
     <link rel="alternate" href="/rockon-blog/atom.xml" title="Rockon Blogs" type="application/atom+xml">
   
@@ -114,14 +117,7 @@
       <div class="row">
         <div class="col-lg-9 col-md-12 mx-auto">
           <section id="main">
-  
-    
-        
-          <div class="row">
-        
-      
-    
-<div class="col-md-6">
+<div class="col">
 
   <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
     <div class="card-header article-header">
@@ -134,10 +130,25 @@
     </div>
     <div class="article-preview--body" itemprop="articleBody">
       
-        Redirecting to a Custom Nginx Maintenance Page temporarily
-        <div class="d-flex justify-content-between align-items-center article-readmore-bar">
-          <a class="btn btn-sm btn-outline-info" href="/rockon-blog/2019/05/30/redirect-to-503-page-during-rollout/">Read more</a>
-        </div>
+          <p><strong>Scenario:</strong> you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.</p>
+<img src="http://nginx.org/nginx.png" class="logo-icon" width="352" height="72" title="nginx logo">
+
+<p>&nbsp;</p>
+<p><strong>Gain:</strong> With following solution,  whenever you need to take your site offline, simply create the file 503 Service Unavailable HTML Page in the root diretory. If the file exists, Nginx will serve it with a 503 status code, if not, it will proceed as usual.</p>
+<h4 id="I-Create-a-custom-503-Service-Unavailable-HTML-Page"><a href="#I-Create-a-custom-503-Service-Unavailable-HTML-Page" class="headerlink" title="I. Create a custom 503 Service Unavailable HTML Page"></a>I. Create a custom 503 Service Unavailable HTML Page</h4><p>First, you need to create a custom http 503 page at website root directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /var/www/htdocs/mysite/maintenance.html</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Error 503 Service Unavailable<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>503 Service Unavailable<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    Our apologies for the temporary inconvenience. The requested URL generated 503 "Service Unavailable" error due to overloading or maintenance of the server. </span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;</p>
+<h4 id="II-Update-Nginx-Configuration"><a href="#II-Update-Nginx-Configuration" class="headerlink" title="II. Update Nginx Configuration"></a>II. Update Nginx Configuration</h4><p>Edit <code>/etc/nginx/config/nginx.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/config/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>Update configuration as follows</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen        80;</span><br><span class="line">        server_name   mysite.com;</span><br><span class="line">        root          /var/www/htdocs/mysite/;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            <span class="keyword">if</span> (-f <span class="variable">$document_root</span>/maintenance.html) &#123;</span><br><span class="line">                <span class="built_in">return</span> 503;</span><br><span class="line">           &#125;</span><br><span class="line">            ... <span class="comment"># the rest of your config goes here</span></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        error_page 503 @maintenance;</span><br><span class="line">        location @maintenance &#123;</span><br><span class="line">                rewrite ^(.*)$ /maintenance.html <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Finally reload the nginx web server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service nginx reload</span><br></pre></td></tr></table></figure>
       
     </div>
     <hr>
@@ -157,180 +168,7 @@
 
   </div>
 </div>
-
-  
-    
-    
-<div class="col-md-6">
-
-  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
-    <div class="card-header article-header">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="article-title" itemprop="name">Build CKAN application with Docker</div>
-        <a href="/rockon-blog/2018/11/18/Working-with-Docker/" class="btn btn-info article-date">
-  <time datetime="2018-11-18T13:20:32.000Z" itemprop="datePublished">18.11.2018</time>
-</a>
-      </div>
-    </div>
-    <div class="article-preview--body" itemprop="articleBody">
-      
-        Install, configure.
-        <div class="d-flex justify-content-between align-items-center article-readmore-bar">
-          <a class="btn btn-sm btn-outline-info" href="/rockon-blog/2018/11/18/Working-with-Docker/">Read more</a>
-        </div>
-      
-    </div>
-    <hr>
-
-      <div class="article-preview--footer">
-        <i class="fas fa-tags"></i>
-
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/docker/">docker</a></li></ul>
-
-        
-  <div class="article-category">
-  	<i class="fas fa-folder-open"></i>
-    <a class="article-category-link" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
-  </div>
-
-      </div>
-
-  </div>
-</div>
-
-  
-    
-        
-          </div>
-          <div class="row">
-        
-      
-    
-<div class="col-md-6">
-
-  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
-    <div class="card-header article-header">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="article-title" itemprop="name">Working with Gulp</div>
-        <a href="/rockon-blog/2018/05/21/work-with-gulp/" class="btn btn-info article-date">
-  <time datetime="2018-05-21T18:37:05.138Z" itemprop="datePublished">21.05.2018</time>
-</a>
-      </div>
-    </div>
-    <div class="article-preview--body" itemprop="articleBody">
-      
-        Install, configure, and run gulp tasks to compile your sass files or synschronize your browser.
-        <div class="d-flex justify-content-between align-items-center article-readmore-bar">
-          <a class="btn btn-sm btn-outline-info" href="/rockon-blog/2018/05/21/work-with-gulp/">Read more</a>
-        </div>
-      
-    </div>
-    <hr>
-
-      <div class="article-preview--footer">
-        <i class="fas fa-tags"></i>
-
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/frontend/">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/gulp/">gulp</a></li></ul>
-
-        
-  <div class="article-category">
-  	<i class="fas fa-folder-open"></i>
-    <a class="article-category-link" href="/rockon-blog/categories/frontend/">frontend</a>
-  </div>
-
-      </div>
-
-  </div>
-</div>
-
-  
-    
-    
-<div class="col-md-6">
-
-  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
-    <div class="card-header article-header">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="article-title" itemprop="name">Writing blog post by using hexo framework</div>
-        <a href="/rockon-blog/2018/05/21/intro/" class="btn btn-info article-date">
-  <time datetime="2018-05-21T18:37:05.138Z" itemprop="datePublished">21.05.2018</time>
-</a>
-      </div>
-    </div>
-    <div class="article-preview--body" itemprop="articleBody">
-      
-        Install and configure hexo. Create blog post in markdown form and Host it to github
-        <div class="d-flex justify-content-between align-items-center article-readmore-bar">
-          <a class="btn btn-sm btn-outline-info" href="/rockon-blog/2018/05/21/intro/">Read more</a>
-        </div>
-      
-    </div>
-    <hr>
-
-      <div class="article-preview--footer">
-        <i class="fas fa-tags"></i>
-
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/github-s-page/">github's page</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/hexo/">hexo</a></li></ul>
-
-        
-  <div class="article-category">
-  	<i class="fas fa-folder-open"></i>
-    <a class="article-category-link" href="/rockon-blog/categories/blog/">blog</a> > <a class="article-category-link" href="/rockon-blog/categories/blog/hexo/">hexo</a>
-  </div>
-
-      </div>
-
-  </div>
-</div>
-
-  
-    
-        
-          </div>
-          <div class="row">
-        
-      
-    
-<div class="col-md-6">
-
-  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
-    <div class="card-header article-header">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="article-title" itemprop="name">Using bower</div>
-        <a href="/rockon-blog/2018/02/01/manage-frontend-frameworks-with-bower/" class="btn btn-info article-date">
-  <time datetime="2018-01-31T23:00:00.000Z" itemprop="datePublished">01.02.2018</time>
-</a>
-      </div>
-    </div>
-    <div class="article-preview--body" itemprop="articleBody">
-      
-        Install and manage frontend packages by using bower. Web sites are made of lots of things frameworks, libraries, assets, and utilities. Bower manages all these things for you.
-        <div class="d-flex justify-content-between align-items-center article-readmore-bar">
-          <a class="btn btn-sm btn-outline-info" href="/rockon-blog/2018/02/01/manage-frontend-frameworks-with-bower/">Read more</a>
-        </div>
-      
-    </div>
-    <hr>
-
-      <div class="article-preview--footer">
-        <i class="fas fa-tags"></i>
-
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/bower/">bower</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/frontend/">frontend</a></li></ul>
-
-        
-  <div class="article-category">
-  	<i class="fas fa-folder-open"></i>
-    <a class="article-category-link" href="/rockon-blog/categories/frontend/">frontend</a>
-  </div>
-
-      </div>
-
-  </div>
-</div>
-
-  
-
-</div></section>
+</section>
         </div>
         <div class="col-lg-3 mx-auto main-sidebar">
            
