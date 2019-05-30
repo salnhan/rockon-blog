@@ -130,6 +130,9 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 Commit your changes first, then execute
 
 ``` bash
+# create static files
+$ hexo generate
+# deploy to remote server
 $ hexo deploy
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: redirect-to-maintenance-page-with-nginx
+title: Redirect to maintenance page with nginx
 date: 2019-05-30 12:16:31
 tags:
  - nginx
