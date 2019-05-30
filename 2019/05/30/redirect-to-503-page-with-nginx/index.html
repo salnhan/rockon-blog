@@ -17,7 +17,7 @@
 <meta property="og:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://nginx.org/nginx.png">
-<meta property="og:updated_time" content="2019-05-30T21:13:54.502Z">
+<meta property="og:updated_time" content="2019-05-30T21:20:40.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redirect to maintenance page with nginx">
 <meta name="twitter:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
@@ -144,7 +144,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen        80;</span><br><span class="line">        server_name   mysite.com;</span><br><span class="line">        root          /var/www/htdocs/mysite/;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            <span class="keyword">if</span> (-f <span class="variable">$document_root</span>/maintenance.html) &#123;</span><br><span class="line">                <span class="built_in">return</span> 503;</span><br><span class="line">           &#125;</span><br><span class="line">            ... <span class="comment"># the rest of your config goes here</span></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        error_page 503 @maintenance;</span><br><span class="line">        location @maintenance &#123;</span><br><span class="line">                rewrite ^(.*)$ /maintenance.html <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Finally reload the nginx web server</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service nginx reload</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># reload instead of restart</span></span><br><span class="line">$ service nginx reload</span><br></pre></td></tr></table></figure>
       
     </div>
     <hr>
