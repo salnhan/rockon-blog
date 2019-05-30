@@ -71,5 +71,6 @@ server {
 Finally reload the nginx web server
 
 ``` bash
+# reload instead of restart
 $ service nginx reload
 ```
