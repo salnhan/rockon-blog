@@ -17,7 +17,7 @@
 <meta property="og:description" content="In this blog  A short introduction to Hexo Framework: installation and setup Creating a blog post in markdown form Hosting blogs to GitHub  Hexo - short introductionHexo Framework is a fast, simple &amp;a">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hexo.io/icon/favicon-196x196.png">
-<meta property="og:updated_time" content="2019-05-30T21:51:12.178Z">
+<meta property="og:updated_time" content="2019-06-18T21:11:55.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Writing blog post by using hexo framework">
 <meta name="twitter:description" content="In this blog  A short introduction to Hexo Framework: installation and setup Creating a blog post in markdown form Hosting blogs to GitHub  Hexo - short introductionHexo Framework is a fast, simple &amp;a">
@@ -73,11 +73,11 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
         <div class="dropdown-menu">
           
-            <a class="dropdown-item" href="/rockon-blog/categories/hexo/">hexo</a>
-          
             <a class="dropdown-item" href="/rockon-blog/categories/ckan/">ckan</a>
           
             <a class="dropdown-item" href="/rockon-blog/categories/frontend/">frontend</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/hexo/">hexo</a>
           
             <a class="dropdown-item" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
           
@@ -174,11 +174,11 @@
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h4 id="Creating-and-writing-a-new-post"><a href="#Creating-and-writing-a-new-post" class="headerlink" title="Creating and writing a new post"></a>Creating and writing a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>In <code>source/_post</code> folder sill you see the file <code>my-new-post.md</code>.</p>
+<p>In <code>source/_post</code> folder will you see the file <code>my-new-post.md</code>.</p>
 <p>You can now write your blog in the <code>my-new-post.md</code>.</p>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h4 id="Deploy-to-remote-sites-github"><a href="#Deploy-to-remote-sites-github" class="headerlink" title="Deploy to remote sites (github)"></a>Deploy to remote sites (github)</h4><p>Commit your changes first, then execute</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create static files</span></span><br><span class="line">$ hexo generate</span><br><span class="line"><span class="comment"># deploy to remote server</span></span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># remove all static files</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="comment"># create static files</span></span><br><span class="line">$ hexo generate</span><br><span class="line"><span class="comment"># deploy to remote server</span></span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 <p><strong><em>Links:</em></strong></p>
