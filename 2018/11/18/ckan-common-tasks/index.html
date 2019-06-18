@@ -6,19 +6,20 @@
   
 
   
-  <title>Archives: 2018/5 | Rockon Blogs</title>
+  <title>Common CKAN administrator tasks | Rockon Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Blog my experiences in web development">
-<meta name="keywords" content="salnhan nhan blog web development rockon-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rockon Blogs">
-<meta property="og:url" content="https://salnhan.github.io/archives/2018/05/index.html">
+  <meta name="description" content="The majority of common CKAN administration tasks are carried out using the paster script. Paster is run on the command line on the server running CKAN. This section covers common tasks using paster Da">
+<meta name="keywords" content="ckan,cli,paster">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Common CKAN administrator tasks">
+<meta property="og:url" content="https://salnhan.github.io/2018/11/18/ckan-common-tasks/index.html">
 <meta property="og:site_name" content="Rockon Blogs">
-<meta property="og:description" content="Blog my experiences in web development">
+<meta property="og:description" content="The majority of common CKAN administration tasks are carried out using the paster script. Paster is run on the command line on the server running CKAN. This section covers common tasks using paster Da">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-18T20:24:18.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rockon Blogs">
-<meta name="twitter:description" content="Blog my experiences in web development">
+<meta name="twitter:title" content="Common CKAN administrator tasks">
+<meta name="twitter:description" content="The majority of common CKAN administration tasks are carried out using the paster script. Paster is run on the command line on the server running CKAN. This section covers common tasks using paster Da">
   
     <link rel="alternate" href="/rockon-blog/atom.xml" title="Rockon Blogs" type="application/atom+xml">
   
@@ -70,13 +71,13 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
         <div class="dropdown-menu">
           
-            <a class="dropdown-item" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
+            <a class="dropdown-item" href="/rockon-blog/categories/hexo/">hexo</a>
           
-            <a class="dropdown-item" href="/rockon-blog/categories/blog/">blog</a>
+            <a class="dropdown-item" href="/rockon-blog/categories/ckan/">ckan</a>
           
             <a class="dropdown-item" href="/rockon-blog/categories/frontend/">frontend</a>
           
-            <a class="dropdown-item" href="/rockon-blog/categories/blog/hexo/">hexo</a>
+            <a class="dropdown-item" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
           
         </div>
       </li>
@@ -110,64 +111,41 @@
       <div class="row">
         <div class="col-lg-9 col-md-12 mx-auto">
           <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <div class="archive-year">2018</>
-        </div>
-        <div class="archives">
-    
-   <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <div class="archive-article-date">
-        <time datetime="2018-05-21T18:37:05.138Z" itemprop="datePublished">May 21</time>
+<div class="col">
+
+  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
+    <div class="card-header article-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="article-title" itemprop="name">Common CKAN administrator tasks</div>
+        <a href="/rockon-blog/2018/11/18/ckan-common-tasks/" class="btn btn-info article-date">
+  <time datetime="2018-11-18T13:20:32.000Z" itemprop="datePublished">18.11.2018</time>
+</a>
       </div>
+    </div>
+    <div class="article-preview--body" itemprop="articleBody">
       
-  
-    
-      <h3 itemprop="name">
-        <a class="archive-article-title" href="/rockon-blog/2018/05/21/intro/">Writing blog post by using hexo framework</a>
-      </h3>
-    
+          <p>The majority of common CKAN administration tasks are carried out using the <strong>paster</strong> script.</p>
+<p>Paster is run on the command line on the server running CKAN. This section covers <em>common tasks using paster</em></p>
+<h1 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h1><h1 id="User-Create-and-manage-users"><a href="#User-Create-and-manage-users" class="headerlink" title="User - Create and manage users"></a>User - Create and manage users</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create user</span></span><br><span class="line">paster --plugin=ckan user add admin -c /etc/ckan/production.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># Give sysadmin rights</span></span><br><span class="line">paster --plugin=ckan sysadmin add admin -c /etc/ckan/production.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># delete user</span></span><br><span class="line">paster --plugin=ckan user remove admin -c /etc/ckan/production.ini</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <hr>
 
-  
+      <div class="article-preview--footer">
+        <i class="fas fa-tags"></i>
 
-    </header>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/ckan/">ckan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/cli/">cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/paster/">paster</a></li></ul>
+
+        
+  <div class="article-category">
+  	<i class="fas fa-folder-open"></i>
+    <a class="article-category-link" href="/rockon-blog/categories/ckan/">ckan</a>
   </div>
-</article>
-  
-    
-    
-   <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <div class="archive-article-date">
-        <time datetime="2018-05-21T18:37:05.138Z" itemprop="datePublished">May 21</time>
+
       </div>
-      
-  
-    
-      <h3 itemprop="name">
-        <a class="archive-article-title" href="/rockon-blog/2018/05/21/work-with-gulp/">Working with Gulp</a>
-      </h3>
-    
 
-  
-
-    </header>
   </div>
-</article>
-  
-  
-    </div></div></section>
-  
-
+</div>
 </section>
         </div>
         <div class="col-lg-3 mx-auto main-sidebar">
@@ -184,19 +162,19 @@
       </li>
     
       <li class="list-group-item">
-        <a href="/rockon-blog/2018/11/18/Working-with-Docker/">Build CKAN application with Docker</a>
+        <a href="/rockon-blog/2018/11/18/ckan-common-tasks/">Common CKAN administrator tasks</a>
       </li>
     
       <li class="list-group-item">
-        <a href="/rockon-blog/2018/05/21/intro/">Writing blog post by using hexo framework</a>
+        <a href="/rockon-blog/2018/09/04/work-with-gulp/">Working with Gulp</a>
       </li>
     
       <li class="list-group-item">
-        <a href="/rockon-blog/2018/05/21/work-with-gulp/">Working with Gulp</a>
+        <a href="/rockon-blog/2018/08/05/using-docker-compose/">Using docker-compose</a>
       </li>
     
       <li class="list-group-item">
-        <a href="/rockon-blog/2018/02/01/manage-frontend-frameworks-with-bower/">Using bower</a>
+        <a href="/rockon-blog/2018/03/05/manage-frontend-frameworks-with-bower/">Using bower</a>
       </li>
     
   </ul>
@@ -208,7 +186,7 @@
 	
 	<div class="card main-sidebar--widget">
 	  <div class="card-header main-sidebar--widget-header">Archives</div>
-	  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/02/">February 2018</a></li></ul>
+	  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/02/">February 2018</a></li></ul>
 	</div>
 	
 
