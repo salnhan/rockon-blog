@@ -1,12 +1,13 @@
 ---
-title: Writing blog post by using hexo framework 
+title: Writing blog post by using hexo framework
+date: 2018-02-01 14:45:10
 tags:
  - hexo
  - blog
  - github's page
 categories:
- - blog
  - hexo
+
 teaser:  Install and configure hexo. Create blog post in markdown form and Host it to github
 ---
 In this blog
@@ -119,17 +120,22 @@ More info: [Server](https://hexo.io/docs/server.html)
 ``` bash
 $ hexo new "My New Post"
 ```
-In `source/_post` folder sill you see the file `my-new-post.md`.
+In `source/_post` folder will you see the file `my-new-post.md`.
 
 You can now write your blog in the `my-new-post.md`.
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+***More info:*** 
+
+* [Writing](https://hexo.io/docs/writing.html)
+* [Blog quote/Iframe/Include Code](https://hexo.io/docs/tag-plugins)
 
 #### Deploy to remote sites (github)
 
 Commit your changes first, then execute
 
 ``` bash
+# remove all static files
+hexo clean
 # create static files
 $ hexo generate
 # deploy to remote server

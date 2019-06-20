@@ -1,12 +1,12 @@
 ---
 title: Using bower
+date: 2018-03-05 18:46:08
 tags:
  - bower
  - frontend
 categories:
  - frontend
 teaser: Install and manage frontend packages by using bower. Web sites are made of lots of things frameworks, libraries, assets, and utilities. Bower manages all these things for you.
-date: 2018.02.01
 ---
 
 Web sites are made of lots of things — frameworks, libraries, assets, and utilities. Bower manages all these things for you.

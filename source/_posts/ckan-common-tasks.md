@@ -81,7 +81,7 @@ paster --plugin=ckan search-index show <dataset_name> -c /etc/ckan/production.in
 
 # clears the search index for the provided dataset or for the whole ckan instance
 paster --plugin=ckan search-index clear [dataset_name] -c /etc/ckan/production.ini
-````
+```
 
 #### Harvester
 
