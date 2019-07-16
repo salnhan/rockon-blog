@@ -6,22 +6,22 @@
   
 
   
-  <title>Redirect to maintenance page with nginx | Rockon Blogs</title>
+  <title>Common postgreSQL commands | Rockon Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
-<meta name="keywords" content="nginx,503,redirect">
+  <meta name="description" content="Common postgreSQL commands   Basic PostgeSQL commands123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# switch postgressudo su - postgres#call psqlpsql# show call">
+<meta name="keywords" content="ckan,cli,paster">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redirect to maintenance page with nginx">
-<meta property="og:url" content="https://salnhan.github.io/2019/05/30/redirect-to-503-page-with-nginx/index.html">
+<meta property="og:title" content="Common postgreSQL commands">
+<meta property="og:url" content="https://salnhan.github.io/2018/04/16/postgres/index.html">
 <meta property="og:site_name" content="Rockon Blogs">
-<meta property="og:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
+<meta property="og:description" content="Common postgreSQL commands   Basic PostgeSQL commands123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# switch postgressudo su - postgres#call psqlpsql# show call">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://nginx.org/nginx.png">
-<meta property="og:updated_time" content="2019-05-30T21:20:40.675Z">
+<meta property="og:image" content="https://www.postgresql.org/media/img/about/press/elephant.png">
+<meta property="og:updated_time" content="2019-07-16T19:39:33.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redirect to maintenance page with nginx">
-<meta name="twitter:description" content="Scenario: you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.   &amp;nbsp; Gain: With followi">
-<meta name="twitter:image" content="http://nginx.org/nginx.png">
+<meta name="twitter:title" content="Common postgreSQL commands">
+<meta name="twitter:description" content="Common postgreSQL commands   Basic PostgeSQL commands123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# switch postgressudo su - postgres#call psqlpsql# show call">
+<meta name="twitter:image" content="https://www.postgresql.org/media/img/about/press/elephant.png">
   
     <link rel="alternate" href="/rockon-blog/atom.xml" title="Rockon Blogs" type="application/atom+xml">
   
@@ -122,33 +122,26 @@
   <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
     <div class="card-header article-header">
       <div class="d-flex justify-content-between align-items-center">
-        <div class="article-title" itemprop="name">Redirect to maintenance page with nginx</div>
-        <a href="/rockon-blog/2019/05/30/redirect-to-503-page-with-nginx/" class="btn btn-info article-date">
-  <time datetime="2019-05-30T10:16:31.000Z" itemprop="datePublished">30.05.2019</time>
+        <div class="article-title" itemprop="name">Common postgreSQL commands</div>
+        <a href="/rockon-blog/2018/04/16/postgres/" class="btn btn-info article-date">
+  <time datetime="2018-04-16T10:55:43.000Z" itemprop="datePublished">16.04.2018</time>
 </a>
       </div>
     </div>
     <div class="article-preview--body" itemprop="articleBody">
       
-          <p><strong>Scenario:</strong> you want to inform clients that the website temporary out of service because of down for maintenance, here’s the (not entirely intuitive) way to do that in Nginx.</p>
-<img src="http://nginx.org/nginx.png" class="logo-icon" width="352" height="72" title="nginx logo">
+          <p>Common postgreSQL commands</p>
+<img src="https://www.postgresql.org/media/img/about/press/elephant.png" class="logo-icon" width="150" height="120" title="postgreSQL logo">
 
-<p>&nbsp;</p>
-<p><strong>Gain:</strong> With following solution,  whenever you need to take your site offline, simply create the file 503 Service Unavailable HTML Page in the root diretory. If the file exists, Nginx will serve it with a 503 status code, if not, it will proceed as usual.</p>
-<h4 id="I-Create-a-custom-503-Service-Unavailable-HTML-Page"><a href="#I-Create-a-custom-503-Service-Unavailable-HTML-Page" class="headerlink" title="I. Create a custom 503 Service Unavailable HTML Page"></a>I. Create a custom 503 Service Unavailable HTML Page</h4><p>First, you need to create a custom http 503 page at website root directory</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /var/www/htdocs/mysite/maintenance.html</span><br></pre></td></tr></table></figure>
+<h4 id="Basic-PostgeSQL-commands"><a href="#Basic-PostgeSQL-commands" class="headerlink" title="Basic PostgeSQL commands"></a>Basic PostgeSQL commands</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># switch postgres</span></span><br><span class="line">sudo su - postgres</span><br><span class="line"><span class="comment">#call psql</span></span><br><span class="line">psql</span><br><span class="line"><span class="comment"># show call database</span></span><br><span class="line">\l</span><br><span class="line"></span><br><span class="line"><span class="comment">## connect to database</span></span><br><span class="line">\c database_name</span><br><span class="line"></span><br><span class="line"><span class="comment">## show all tables of database;</span></span><br><span class="line">\dt</span><br><span class="line"></span><br><span class="line"><span class="comment"># show columns of a table;</span></span><br><span class="line">\d+ table_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># disconnect a database</span></span><br><span class="line">\q</span><br><span class="line"></span><br><span class="line"><span class="comment"># show content of a table</span></span><br><span class="line">select * from table_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># clear table</span></span><br><span class="line">TRUNCATE table_name CASCADE;</span><br><span class="line"></span><br><span class="line"><span class="comment"># drop database</span></span><br><span class="line">REVOKE CONNECT ON DATABASE database_name FROM public;</span><br><span class="line">SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = <span class="string">'database_name'</span>;</span><br><span class="line">DROP DATABASE database_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># create database</span></span><br><span class="line">CREATE DATABASE database_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># create database user</span></span><br><span class="line">createuser -S -D -R -P -l datastore_default;</span><br><span class="line">createdb -O ckan_default datastore_default -E utf-8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># grant select permissions for read-only user</span></span><br><span class="line">GRANT CONNECT ON DATABASE <span class="string">"datastore_default"</span> TO <span class="string">"datastore_default"</span>;</span><br><span class="line">GRANT USAGE ON SCHEMA public TO <span class="string">"datastore_default"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># grant access to current tables and views to read-only user</span></span><br><span class="line">GRANT SELECT ON ALL TABLES IN SCHEMA public TO <span class="string">"datastore_default"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># grant access to new tables and views by default</span></span><br><span class="line">ALTER DEFAULT PRIVILEGES FOR USER <span class="string">"ckan_default"</span> IN SCHEMA public</span><br><span class="line">  GRANT SELECT ON TABLES TO <span class="string">"datastore_default"</span>;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Error 503 Service Unavailable<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>503 Service Unavailable<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    Our apologies for the temporary inconvenience. The requested URL generated 503 "Service Unavailable" error due to overloading or maintenance of the server. </span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="PostgeSQL-in-Docker"><a href="#PostgeSQL-in-Docker" class="headerlink" title="PostgeSQL in Docker"></a>PostgeSQL in Docker</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import dump to docker container </span></span><br><span class="line">cat full-backup-1d.sql | docker <span class="built_in">exec</span> -i rlp_ckan_tpp_db pg_restore  -U postgres -d ckan_default</span><br></pre></td></tr></table></figure>
 
-<p>&nbsp;</p>
-<h4 id="II-Update-Nginx-Configuration"><a href="#II-Update-Nginx-Configuration" class="headerlink" title="II. Update Nginx Configuration"></a>II. Update Nginx Configuration</h4><p>Edit <code>/etc/nginx/config/nginx.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/config/nginx.conf</span><br></pre></td></tr></table></figure>
+<p><strong><em>Links</em></strong></p>
+<ul>
+<li><a href="https://www.postgresql.org/" target="_blank" rel="noopener">https://www.postgresql.org/</a></li>
+</ul>
 
-<p>Update configuration as follows</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen        80;</span><br><span class="line">        server_name   mysite.com;</span><br><span class="line">        root          /var/www/htdocs/mysite/;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            <span class="keyword">if</span> (-f <span class="variable">$document_root</span>/maintenance.html) &#123;</span><br><span class="line">                <span class="built_in">return</span> 503;</span><br><span class="line">           &#125;</span><br><span class="line">            ... <span class="comment"># the rest of your config goes here</span></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        error_page 503 @maintenance;</span><br><span class="line">        location @maintenance &#123;</span><br><span class="line">                rewrite ^(.*)$ /maintenance.html <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Finally reload the nginx web server</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># reload instead of restart</span></span><br><span class="line">$ service nginx reload</span><br></pre></td></tr></table></figure>
       
     </div>
     <hr>
@@ -156,12 +149,12 @@
       <div class="article-preview--footer">
         <i class="fas fa-tags"></i>
 
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/503/">503</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/redirect/">redirect</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/ckan/">ckan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/cli/">cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/paster/">paster</a></li></ul>
 
         
   <div class="article-category">
   	<i class="fas fa-folder-open"></i>
-    <a class="article-category-link" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
+    <a class="article-category-link" href="/rockon-blog/categories/postgres/">postgres</a>
   </div>
 
       </div>
