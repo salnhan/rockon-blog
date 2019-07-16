@@ -21,7 +21,7 @@ Gulp is a powerful tool to automate any tasks during the web development like mi
 
 ### Installation
 
-Run follwing npm task
+Run following npm task
 ``` bash
 $ npm install gulp --save-dev
 ```
