@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Extends TYPO3 extbase model or controller | Rockon Blogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="If you have to override or extend Extbase model or controller, you should do following steps    Extend controllerCreate new extbase controller NewController.php123456789101112131415 &amp;lt;?php namespace">
+<meta name="keywords" content="TYPO3,Extbase,Domain,Model,Controller">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Extends TYPO3 extbase model or controller">
+<meta property="og:url" content="https://salnhan.github.io/2019/07/16/extbase-model-expand/index.html">
+<meta property="og:site_name" content="Rockon Blogs">
+<meta property="og:description" content="If you have to override or extend Extbase model or controller, you should do following steps    Extend controllerCreate new extbase controller NewController.php123456789101112131415 &amp;lt;?php namespace">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://typo3.org/typo3conf/ext/t3olayout/Resources/Public/Images/Template/typo3_nomargins.svg">
+<meta property="og:updated_time" content="2019-07-28T18:12:29.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extends TYPO3 extbase model or controller">
+<meta name="twitter:description" content="If you have to override or extend Extbase model or controller, you should do following steps    Extend controllerCreate new extbase controller NewController.php123456789101112131415 &amp;lt;?php namespace">
+<meta name="twitter:image" content="https://typo3.org/typo3conf/ext/t3olayout/Resources/Public/Images/Template/typo3_nomargins.svg">
+  
+    <link rel="alternate" href="/rockon-blog/atom.xml" title="Rockon Blogs" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="/rockon-blog/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/rockon-blog/css/styles.css">
+  <link rel="stylesheet" href="/rockon-blog/css/breakpoints.css">
+  <link rel="stylesheet" href="/rockon-blog/css/highlight.css">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+
+  <!-- use specific layout for about page -->
+  
+  <body class="bg-dark">
+    <!-- navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand d-lg-none" href="#">Rockon Blogs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       
+          <li class="nav-item ">
+            <a class="nav-link" href="/rockon-blog/">Home</a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/rockon-blog/archives/">Archives</a>
+          </li>
+        
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+        <div class="dropdown-menu">
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/TYPO3/">TYPO3</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/hexo/">hexo</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/ckan/">ckan</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/frontend/">frontend</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/postgreSQL/">postgreSQL</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/backend/">backend</a>
+          
+            <a class="dropdown-item" href="/rockon-blog/categories/infrastructure/">infrastructure</a>
+          
+        </div>
+      </li>
+    </ul>
+    <a class="navbar-brand d-none d-lg-flex" href="index.html">Rockon Blogs</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="https://github.com/salnhan/rock-on-blog" title="Github''> <i class=" fab fa-github"></a>
+      </li>
+      <li class="nav-item">
+       </li><li class="nav-item">
+          <a class="nav-link" href="mailto:mascit10@gmail.com" title="Contact"> <i class="far fa-envelope"></i></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href title="facebook"> <i class="fab fa-facebook-f"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rockon-blog/atom.xml" title="rss_feed">
+        <span><i class="fas fa-rss"></i></span></a>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+    <!-- end navigation -->
+
+    <!-- main -->
+    <div class="container main-wrapper mx-auto">
+      <hr class="hr-nav">
+      <div class="row">
+        <div class="col-lg-9 col-md-12 mx-auto">
+          <section id="main">
+<div class="col">
+
+  <div class="card mb-4 box-shadow" itemscope itemprop="blogPost">
+    <div class="card-header article-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="article-title" itemprop="name">Extends TYPO3 extbase model or controller</div>
+        <a href="/rockon-blog/2019/07/16/extbase-model-expand/" class="btn btn-info article-date">
+  <time datetime="2019-07-16T19:51:03.000Z" itemprop="datePublished">16.07.2019</time>
+</a>
+      </div>
+    </div>
+    <div class="article-preview--body" itemprop="articleBody">
+      
+          <p>If you have to override or extend Extbase model or controller, you should do following steps</p>
+<img src="https://typo3.org/typo3conf/ext/t3olayout/Resources/Public/Images/Template/typo3_nomargins.svg" class="logo-icon" width="352" height="72" title="typo3 logo">
+
+<hr>
+<h3 id="Extend-controller"><a href="#Extend-controller" class="headerlink" title="Extend controller"></a>Extend controller</h3><figure class="highlight php"><figcaption><span>Create new extbase controller NewController.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">namespace</span> <span class="title">Extension</span>\<span class="title">Name</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">NewController</span> <span class="keyword">extends</span> \<span class="title">Extension</span>\<span class="title">Original</span>\<span class="title">Controller</span>\<span class="title">OldController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *  new action</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> null</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">newAction</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight ts"><figcaption><span>Register controller via TypoScript setup.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config.tx_extbase &#123;</span><br><span class="line">    objects &#123;</span><br><span class="line">        \Extension\Original\Controller\OldController &#123;</span><br><span class="line">            className = Extension\Name\Controller\NewController</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Extend-model"><a href="#Extend-model" class="headerlink" title="Extend model"></a>Extend model</h3><p>Add new field <code>field_color</code> to model <code>tx_extname_domain_model_modelname</code></p>
+<figure class="highlight sql"><figcaption><span>Add new field to ext_tables.sql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tx_extname_domain_model_modelname (</span><br><span class="line"> field_color <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight php"><figcaption><span>Create a new model class ModelName.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Extension</span>\<span class="title">Name</span>\<span class="title">Domain</span>\<span class="title">Model</span>\<span class="title">ModelName</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ModelName</span> <span class="keyword">extends</span> \<span class="title">Extension</span>\<span class="title">Original</span>\<span class="title">Domain</span>\<span class="title">Model</span>\<span class="title">ModelName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@param</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    fieldColor = <span class="string">''</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getFieldColor</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fieldColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">setFieldColor</span><span class="params">($color)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;fieldColor = $color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ts"><figcaption><span>Register new model via TypoScript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">config.tx_extbase &#123;</span><br><span class="line">    objects &#123;</span><br><span class="line">        Extension\Original\Domain\Model\ModelName &#123;</span><br><span class="line">            className = Extension\Name\Domain\Model\ModelName</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    persistence &#123;</span><br><span class="line">        classes &#123;</span><br><span class="line">            Extension\Name\Domain\Model\ModelName &#123;</span><br><span class="line">                mapping &#123;</span><br><span class="line">                    tableName = tx_extname_domain_model_modelname</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <hr>
+
+      <div class="article-preview--footer">
+        <i class="fas fa-tags"></i>
+
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/Controller/">Controller</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/Domain/">Domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/Extbase/">Extbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/Model/">Model</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/rockon-blog/tags/TYPO3/">TYPO3</a></li></ul>
+
+        
+  <div class="article-category">
+  	<i class="fas fa-folder-open"></i>
+    <a class="article-category-link" href="/rockon-blog/categories/TYPO3/">TYPO3</a>
+  </div>
+
+      </div>
+
+  </div>
+</div>
+</section>
+        </div>
+        <div class="col-lg-3 mx-auto main-sidebar">
+           
+            <aside id="sidebar">
+  
+    
+<div class="card main-sidebar--widget">
+  <div class="card-header main-sidebar--widget-header">Recent Posts</div>
+  <ul class="list-group list-group-flush">
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2019/07/16/extbase-model-expand/">Extends TYPO3 extbase model or controller</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2019/06/20/sort-by-name/">PHP Sort by name with Umlauts</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2019/05/30/redirect-to-503-page-with-nginx/">Redirect to maintenance page with nginx</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2018/11/18/ckan-common-tasks/">Common CKAN administrator tasks</a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/rockon-blog/2018/09/04/work-with-gulp/">Working with Gulp</a>
+      </li>
+    
+  </ul>
+
+</div>
+
+  
+    
+	
+	<div class="card main-sidebar--widget">
+	  <div class="card-header main-sidebar--widget-header">Archives</div>
+	  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/rockon-blog/archives/2018/02/">February 2018</a></li></ul>
+	</div>
+	
+
+
+
+  
+</aside>
+          
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer class="container footer">
+  <hr class="hr-nav">
+  
+  <div class="d-flex justify-content-between align-items-center">
+  	<div class="footer-copyright">
+      &copy; 2019 salnhan (MT Nhan)
+	</div>
+	<div class="footer-themes">
+      Themes <a href="https://github.com/salnhan/hexo-theme-rockon-blog" target="_blank">rockon-blogs</a>
+	</div>
+	<div class="footer-hexo">
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  	</div>
+  </div>
+</footer>
+
+      <! -- insert javascripts -->
+      
+<script></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/rockon-blog/fancybox/jquery.fancybox.css">
+  <script src="/rockon-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+
+
+    </div>
+    <!-- end main -->
+  </body>
+</html>

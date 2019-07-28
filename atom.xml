@@ -6,7 +6,7 @@
   <link href="/rockon-blog/atom.xml" rel="self"/>
   
   <link href="https://salnhan.github.io/"/>
-  <updated>2019-06-20T18:36:32.640Z</updated>
+  <updated>2019-07-28T18:12:29.303Z</updated>
   <id>https://salnhan.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Extends TYPO3 extbase model or controller</title>
+    <link href="https://salnhan.github.io/2019/07/16/extbase-model-expand/"/>
+    <id>https://salnhan.github.io/2019/07/16/extbase-model-expand/</id>
+    <published>2019-07-16T19:51:03.000Z</published>
+    <updated>2019-07-28T18:12:29.303Z</updated>
+    
+    <content type="html"><![CDATA[<p>If you have to override or extend Extbase model or controller, you should do following steps</p><img src="https://typo3.org/typo3conf/ext/t3olayout/Resources/Public/Images/Template/typo3_nomargins.svg" class="logo-icon" width="352" height="72" title="typo3 logo"><hr><h3 id="Extend-controller"><a href="#Extend-controller" class="headerlink" title="Extend controller"></a>Extend controller</h3><figure class="highlight php"><figcaption><span>Create new extbase controller NewController.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">namespace</span> <span class="title">Extension</span>\<span class="title">Name</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">NewController</span> <span class="keyword">extends</span> \<span class="title">Extension</span>\<span class="title">Original</span>\<span class="title">Controller</span>\<span class="title">OldController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *  new action</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> null</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">newAction</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> <figure class="highlight ts"><figcaption><span>Register controller via TypoScript setup.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config.tx_extbase &#123;</span><br><span class="line">    objects &#123;</span><br><span class="line">        \Extension\Original\Controller\OldController &#123;</span><br><span class="line">            className = Extension\Name\Controller\NewController</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h3 id="Extend-model"><a href="#Extend-model" class="headerlink" title="Extend model"></a>Extend model</h3><p>Add new field <code>field_color</code> to model <code>tx_extname_domain_model_modelname</code></p><figure class="highlight sql"><figcaption><span>Add new field to ext_tables.sql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tx_extname_domain_model_modelname (</span><br><span class="line"> field_color <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight php"><figcaption><span>Create a new model class ModelName.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Extension</span>\<span class="title">Name</span>\<span class="title">Domain</span>\<span class="title">Model</span>\<span class="title">ModelName</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ModelName</span> <span class="keyword">extends</span> \<span class="title">Extension</span>\<span class="title">Original</span>\<span class="title">Domain</span>\<span class="title">Model</span>\<span class="title">ModelName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *<span class="doctag">@param</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    fieldColor = <span class="string">''</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getFieldColor</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fieldColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> string</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">setFieldColor</span><span class="params">($color)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;fieldColor = $color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight ts"><figcaption><span>Register new model via TypoScript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">config.tx_extbase &#123;</span><br><span class="line">    objects &#123;</span><br><span class="line">        Extension\Original\Domain\Model\ModelName &#123;</span><br><span class="line">            className = Extension\Name\Domain\Model\ModelName</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    persistence &#123;</span><br><span class="line">        classes &#123;</span><br><span class="line">            Extension\Name\Domain\Model\ModelName &#123;</span><br><span class="line">                mapping &#123;</span><br><span class="line">                    tableName = tx_extname_domain_model_modelname</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;If you have to override or extend Extbase model or controller, you should do following steps&lt;/p&gt;
+&lt;img src=&quot;https://typo3.org/typo3conf/ex
+      
+    
+    </summary>
+    
+      <category term="TYPO3" scheme="https://salnhan.github.io/categories/TYPO3/"/>
+    
+    
+      <category term="TYPO3" scheme="https://salnhan.github.io/tags/TYPO3/"/>
+    
+      <category term="Extbase" scheme="https://salnhan.github.io/tags/Extbase/"/>
+    
+      <category term="Domain" scheme="https://salnhan.github.io/tags/Domain/"/>
+    
+      <category term="Model" scheme="https://salnhan.github.io/tags/Model/"/>
+    
+      <category term="Controller" scheme="https://salnhan.github.io/tags/Controller/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP Sort by name with Umlauts</title>
@@ -126,9 +160,9 @@
       <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
     
     
-      <category term="gulp" scheme="https://salnhan.github.io/tags/gulp/"/>
-    
       <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
+    
+      <category term="gulp" scheme="https://salnhan.github.io/tags/gulp/"/>
     
   </entry>
   
@@ -165,7 +199,7 @@
     <link href="https://salnhan.github.io/2018/04/16/postgres/"/>
     <id>https://salnhan.github.io/2018/04/16/postgres/</id>
     <published>2018-04-16T10:55:43.000Z</published>
-    <updated>2019-07-16T19:39:33.519Z</updated>
+    <updated>2019-07-16T19:48:24.318Z</updated>
     
     <content type="html"><![CDATA[<p>Common postgreSQL commands</p><img src="https://www.postgresql.org/media/img/about/press/elephant.png" class="logo-icon" width="150" height="120" title="postgreSQL logo"><h4 id="Basic-PostgeSQL-commands"><a href="#Basic-PostgeSQL-commands" class="headerlink" title="Basic PostgeSQL commands"></a>Basic PostgeSQL commands</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># switch postgres</span></span><br><span class="line">sudo su - postgres</span><br><span class="line"><span class="comment">#call psql</span></span><br><span class="line">psql</span><br><span class="line"><span class="comment"># show call database</span></span><br><span class="line">\l</span><br><span class="line"></span><br><span class="line"><span class="comment">## connect to database</span></span><br><span class="line">\c database_name</span><br><span class="line"></span><br><span class="line"><span class="comment">## show all tables of database;</span></span><br><span class="line">\dt</span><br><span class="line"></span><br><span class="line"><span class="comment"># show columns of a table;</span></span><br><span class="line">\d+ table_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># disconnect a database</span></span><br><span class="line">\q</span><br><span class="line"></span><br><span class="line"><span class="comment"># show content of a table</span></span><br><span class="line">select * from table_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># clear table</span></span><br><span class="line">TRUNCATE table_name CASCADE;</span><br><span class="line"></span><br><span class="line"><span class="comment"># drop database</span></span><br><span class="line">REVOKE CONNECT ON DATABASE database_name FROM public;</span><br><span class="line">SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = <span class="string">'database_name'</span>;</span><br><span class="line">DROP DATABASE database_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># create database</span></span><br><span class="line">CREATE DATABASE database_name;</span><br><span class="line"></span><br><span class="line"><span class="comment"># create database user</span></span><br><span class="line">createuser -S -D -R -P -l datastore_default;</span><br><span class="line">createdb -O ckan_default datastore_default -E utf-8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># grant select permissions for read-only user</span></span><br><span class="line">GRANT CONNECT ON DATABASE <span class="string">"datastore_default"</span> TO <span class="string">"datastore_default"</span>;</span><br><span class="line">GRANT USAGE ON SCHEMA public TO <span class="string">"datastore_default"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># grant access to current tables and views to read-only user</span></span><br><span class="line">GRANT SELECT ON ALL TABLES IN SCHEMA public TO <span class="string">"datastore_default"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># grant access to new tables and views by default</span></span><br><span class="line">ALTER DEFAULT PRIVILEGES FOR USER <span class="string">"ckan_default"</span> IN SCHEMA public</span><br><span class="line">  GRANT SELECT ON TABLES TO <span class="string">"datastore_default"</span>;</span><br></pre></td></tr></table></figure><h4 id="PostgeSQL-in-Docker"><a href="#PostgeSQL-in-Docker" class="headerlink" title="PostgeSQL in Docker"></a>PostgeSQL in Docker</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import dump to docker container </span></span><br><span class="line">cat full-backup-1d.sql | docker <span class="built_in">exec</span> -i rlp_ckan_tpp_db pg_restore  -U postgres -d ckan_default</span><br></pre></td></tr></table></figure><p><strong><em>Links</em></strong></p><ul><li><a href="https://www.postgresql.org/" target="_blank" rel="noopener">https://www.postgresql.org/</a></li></ul>]]></content>
     
@@ -179,14 +213,10 @@
     
     </summary>
     
-      <category term="postgres" scheme="https://salnhan.github.io/categories/postgres/"/>
+      <category term="postgreSQL" scheme="https://salnhan.github.io/categories/postgreSQL/"/>
     
     
-      <category term="ckan" scheme="https://salnhan.github.io/tags/ckan/"/>
-    
-      <category term="cli" scheme="https://salnhan.github.io/tags/cli/"/>
-    
-      <category term="paster" scheme="https://salnhan.github.io/tags/paster/"/>
+      <category term="postgres" scheme="https://salnhan.github.io/tags/postgres/"/>
     
   </entry>
   
@@ -211,9 +241,9 @@
       <category term="frontend" scheme="https://salnhan.github.io/categories/frontend/"/>
     
     
-      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
-    
       <category term="bower" scheme="https://salnhan.github.io/tags/bower/"/>
+    
+      <category term="frontend" scheme="https://salnhan.github.io/tags/frontend/"/>
     
   </entry>
   
