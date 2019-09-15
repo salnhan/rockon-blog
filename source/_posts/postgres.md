@@ -2,11 +2,9 @@
 title: Common postgreSQL commands
 date: 2018-04-16 12:55:43
 tags:
- - ckan
- - cli
- - paster
-categories:
  - postgres
+categories:
+ - postgreSQL
 teaser: Useful postgreSQL commands
 ---
 
