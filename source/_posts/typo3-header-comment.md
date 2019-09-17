@@ -9,7 +9,7 @@ tags:
 
 If you want add your custom comment to head of TYPO3 page like
 
-{%codeblock Custom header comment lang:html %}
+{% codeblock Custom header comment lang:html %}
 <html dir="ltr" lang="de"><head>
 
 <meta charset="utf-8">
@@ -30,11 +30,11 @@ If you want add your custom comment to head of TYPO3 page like
 ...
 </body>
 </html>
-{%endcodeblock}
+{% endcodeblock %}
 
 you can define it in TypoScript config
 
-{%codeblock Custom header comment lang:typoscript %}
+{% codeblock typoscript page config lang:typoscript %}
 config {
     headerComment (
 Your custom comment here
@@ -42,5 +42,5 @@ Comment 1
 Comment 2     
     )
 }
-{%endcodeblock}
+{% endcodeblock %}
 
